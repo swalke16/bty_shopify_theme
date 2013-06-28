@@ -1,0 +1,50 @@
+<section class="item_page">
+  <div class="product full_view">
+    <img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.title | escape  }}" />
+    <div class="full_view_price">{{ include 'product-price' }}</div>
+  </div>
+
+  {% if product.images.size > 1 %}
+    <div class="thumbnails">
+      {% for image in product.images %}
+        <a class="product thumbnail_view" href="{{ image | product_img_url: 'original' }}" target="_blank">
+          <img src="{{ image | product_img_url: 'large' }}" alt="{{ image.alt | escape }}" />
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="item_details">
+    <h2>{{ product.title }}</h2>
+    <p> {{ product.description }} </p>
+
+    <form id="add-item-form" action="/cart/add" method="post" class="variants">
+      <!-- Begin product options -->
+      <div class="options">
+
+        <!-- TODO: better variant option styling -->
+        <div class="select clearfix"{% if hide_default_title %} style="display:none"{% endif %}>
+          <select id="product-select" name="id">
+            {% for variant in product.variants %}
+            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <h6>QUANTITY</h6>
+        <input type="text" class="quantity" name="search" value="1" />
+      </div>
+
+      {% unless product.available %}
+      <p>Sold Out</p>
+      {% else %}
+      <input type="submit" id="add-to-cart" class="add_button" name="add" value="ADD TO CART" />
+      {% endunless %}
+      <!-- TODO: where does this go -->
+      <a class="return_button" href="#">RETURN TO LIST</a>
+
+    </form>
+
+  </div>
+
+</section>
