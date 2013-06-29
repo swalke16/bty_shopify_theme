@@ -20,14 +20,14 @@ body {
   background-color: #111111;
   background-size: cover;
   background-position: 50% 0;
-  background-image: url(/images/bg.jpg);
+  background-image: url({{'bg.jpg' | asset_url}});
   -webkit-animation: fade-in 1s 1;
   -moz-animation: fade-in 1s 1;
   animation: fade-in 1s 1; }
   @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
     /* line 16, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
     body {
-      background-image: url(/images/bg@2x.jpg);
+      background-image: url({{'bg-2x.jpg' | asset_url}});
       background-size: 100%; } }
 
 @-webkit-keyframes fade-in {
@@ -132,12 +132,15 @@ header {
   float: right;
   border-radius: 1px;
   border-top-right-radius: 0; }
+  /* line 38, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  .nav_bar nav a {
+    text-transform: uppercase; }
 
-/* line 37, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+/* line 41, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
 .selected {
   color: #eeeeee; }
 
-/* line 40, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+/* line 44, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
 .dropdown {
   background: #333333;
   -webkit-transition: all 0.2s;
@@ -149,9 +152,10 @@ header {
   overflow: hidden;
   text-align: center;
   box-shadow: inset 0 6px 18px rgba(0, 0, 0, 0.2), inset 0 -6px 18px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.1); }
-  /* line 50, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 54, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   .dropdown a {
     font-size: 14px;
+    text-transform: uppercase;
     opacity: 0;
     text-shadow: 0 -1px 0 #0d0d0d;
     color: rgba(238, 238, 238, 0.7);
@@ -159,18 +163,21 @@ header {
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s; }
-    /* line 58, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+    /* line 63, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+    .dropdown a:last-child {
+      margin: 0 0 0 0; }
+    /* line 67, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
     .dropdown a:hover {
       color: #eeeeee; }
-  /* line 61, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 70, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   .dropdown.dropdown_open {
     padding: 18px 0;
     height: 60px; }
-    /* line 65, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+    /* line 74, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
     .dropdown.dropdown_open a {
       opacity: 1; }
 
-/* line 68, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+/* line 77, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
 .logo {
   width: 84px;
   height: 81px;
@@ -180,23 +187,23 @@ header {
   left: 10px;
   margin: 0;
   background-repeat: no-repeat;
-  background-image: url(/images/logo.png); }
+  background-image: url({{'logo.png' | asset_url}}); }
   @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
-    /* line 68, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+    /* line 77, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
     .logo {
-      background-image: url(/images/logo@2x.png);
+      background-image: url({{'logo-2x.png' | asset_url}});
       background-size: 100%; } }
 
-/* line 79, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+/* line 88, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
 nav {
   float: right;
   margin-top: 12px; }
 
-/* line 83, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+/* line 92, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
 .checkout {
   float: left;
   position: relative; }
-  /* line 87, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 96, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   .checkout:hover > .total {
     -webkit-transform: translateY(-4px);
     -moz-transform: translateY(-4px);
@@ -204,21 +211,21 @@ nav {
     -o-transform: translateY(-4px);
     transform: translateY(-4px); }
 
-/* line 90, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+/* line 99, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
 .cart {
   position: relative;
   top: 4px;
   width: 17px;
   height: 17px;
   z-index: 1;
-  background-image: url(/images/cart.png); }
+  background-image: url({{'cart.png' | asset_url}}); }
   @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
-    /* line 90, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+    /* line 99, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
     .cart {
-      background-image: url(/images/cart@2x.png);
+      background-image: url({{'cart-2x.png' | asset_url}});
       background-size: 100%; } }
 
-/* line 98, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+/* line 107, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
 .total {
   width: 15px;
   height: 15px;
@@ -240,118 +247,118 @@ nav {
   animation: bounce 1s 1; }
 
 @-webkit-keyframes bounce {
-  /* line 115, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 124, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   0% {
     -webkit-transform: translateY(0); }
 
-  /* line 117, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 126, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   16.666% {
     -webkit-transform: translateY(-4px); }
 
-  /* line 119, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 128, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   33.332% {
     -webkit-transform: translateY(0px); }
 
-  /* line 121, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 130, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   49.998% {
     -webkit-transform: translateY(-4px); }
 
-  /* line 123, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 132, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   66.664% {
     -webkit-transform: translateY(0px); }
 
-  /* line 125, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 134, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   83.33% {
     -webkit-transform: translateY(-4px); }
 
-  /* line 127, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 136, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   100% {
     -webkit-transform: translateY(0px); } }
 
 @-moz-keyframes bounce {
-  /* line 115, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 124, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   0% {
     -moz-transform: translateY(0); }
 
-  /* line 117, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 126, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   16.666% {
     -moz-transform: translateY(-4px); }
 
-  /* line 119, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 128, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   33.332% {
     -moz-transform: translateY(0px); }
 
-  /* line 121, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 130, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   49.998% {
     -moz-transform: translateY(-4px); }
 
-  /* line 123, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 132, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   66.664% {
     -moz-transform: translateY(0px); }
 
-  /* line 125, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 134, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   83.33% {
     -moz-transform: translateY(-4px); }
 
-  /* line 127, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 136, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   100% {
     -moz-transform: translateY(0px); } }
 
 @-o-keyframes bounce {
-  /* line 115, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 124, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   0% {
     -o-transform: translateY(0); }
 
-  /* line 117, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 126, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   16.666% {
     -o-transform: translateY(-4px); }
 
-  /* line 119, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 128, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   33.332% {
     -o-transform: translateY(0px); }
 
-  /* line 121, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 130, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   49.998% {
     -o-transform: translateY(-4px); }
 
-  /* line 123, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 132, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   66.664% {
     -o-transform: translateY(0px); }
 
-  /* line 125, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 134, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   83.33% {
     -o-transform: translateY(-4px); }
 
-  /* line 127, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 136, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   100% {
     -o-transform: translateY(0px); } }
 
 @keyframes bounce {
-  /* line 115, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 124, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   0% {
     transform: translateY(0); }
 
-  /* line 117, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 126, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   16.666% {
     transform: translateY(-4px); }
 
-  /* line 119, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 128, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   33.332% {
     transform: translateY(0px); }
 
-  /* line 121, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 130, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   49.998% {
     transform: translateY(-4px); }
 
-  /* line 123, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 132, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   66.664% {
     transform: translateY(0px); }
 
-  /* line 125, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 134, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   83.33% {
     transform: translateY(-4px); }
 
-  /* line 127, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
+  /* line 136, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/_header.sass */
   100% {
     transform: translateY(0px); } }
 
@@ -466,9 +473,9 @@ section {
   opacity: 0;
   top: 15px;
   right: 14px;
-  width: 20px;
+  width: 21px;
   height: 10px;
-  background-image: url(/images/add-to-cart.png);
+  background-image: url({{'add-to-cart.png' | asset_url}});
   -webkit-transform: translateX(40px);
   -moz-transform: translateX(40px);
   -ms-transform: translateX(40px);
@@ -480,15 +487,15 @@ section {
   @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
     /* line 121, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
     .add_to_cart {
-      background-image: url(/images/add-to-cart@2x.png);
+      background-image: url({{'add-to-cart-2x.png' | asset_url}});
       background-size: 100%; } }
   /* line 132, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
   .add_to_cart:hover {
-    background-image: url(/images/add-to-cart-hover.png); }
+    background-image: url({{'add-to-cart-hover.png' | asset_url}}); }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
       /* line 132, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
       .add_to_cart:hover {
-        background-image: url(/images/add-to-cart-hover@2x.png);
+        background-image: url({{'add-to-cart-hover-2x.png' | asset_url}});
         background-size: 100%; } }
 
 /* line 135, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
@@ -577,6 +584,10 @@ footer {
   display: inline; }
 
 /* line 207, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+.fade {
+  opacity: 0.3; }
+
+/* line 210, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .color {
   width: 12px;
   height: 12px;
@@ -585,35 +596,35 @@ footer {
   border-radius: 1px;
   cursor: pointer; }
 
-/* line 214, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 217, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .black {
   background: black; }
 
-/* line 217, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 220, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .white {
   background: white; }
 
-/* line 220, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 223, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .red {
   background: red; }
 
-/* line 223, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 226, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .blue {
   background: blue; }
 
-/* line 226, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 229, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .green {
   background: green; }
 
-/* line 229, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 232, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .orange {
   background: orange; }
 
-/* line 232, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 235, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .purple {
   background: purple; }
 
-/* line 235, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 238, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 input {
   background: rgba(238, 238, 238, 0.5);
   outline: none;
@@ -633,13 +644,13 @@ input {
   input:-ms-input-placeholder {
     color: #333333; }
 
-/* line 245, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 248, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .quantity {
   width: 40px;
   text-align: center;
   margin-top: 4px; }
 
-/* line 250, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 253, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .full_view {
   margin: 0;
   max-width: none;
@@ -648,7 +659,7 @@ input {
   border: none;
   opacity: 1; }
 
-/* line 258, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 261, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .full_view_price {
   color: #eeeeee;
   font-size: 28px;
@@ -656,7 +667,7 @@ input {
   bottom: 6px;
   right: 14px; }
 
-/* line 265, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 268, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .add_button, .return_button {
   position: absolute;
   color: #eeeeee;
@@ -664,46 +675,46 @@ input {
   background: #333333;
   padding: 2px 12px 1px;
   border-radius: 1px;
-  bottom: 5%; }
+  bottom: 4.5%; }
 
-/* line 274, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 277, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .add_button {
   right: 2%; }
 
-/* line 277, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 280, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .return_button {
   left: 58%;
   opacity: 0.5;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s; }
-  /* line 282, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+  /* line 285, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
   .return_button:hover {
     opacity: 1; }
 
-/* line 285, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 288, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .thumbnails {
   width: 8%;
   margin-left: 5px;
   float: left; }
 
-/* line 290, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 293, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .thumbnail_view {
   width: 100%;
   float: none;
   margin: 0 0 5px 0;
   border: none; }
 
-/* line 296, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 299, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .item_details {
   width: 43%;
   padding: 1%;
   float: right; }
-  /* line 301, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+  /* line 304, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
   .item_details p {
     color: rgba(51, 51, 51, 0.9);
     font-weight: light; }
 
-/* line 305, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
+/* line 308, /Users/swalker/Documents/fun/bty_apparel_design/source/stylesheets/all.css.sass */
 .options {
   margin: 10px 0 0 0; }

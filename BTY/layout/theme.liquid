@@ -56,15 +56,13 @@
           <h1 class="logo"></h1>
         </a>
         <nav>
-          <a>Affiliates</a>
           {% for link in linklists.main-menu.links %}
-            <a class="{{link.title | handelize}}_link"  href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+            <a class="{{link.title | handleize}}_link"  href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
           {% endfor %}
           <a class="checkout" href="/cart" title="Shopping Cart">
-            <div class="cart">
-              <div class="total">
-                {{ cart.item_count }}
-              </div>
+            <div class="cart"></div>
+            <div class="total">
+              {{ cart.item_count }}
             </div>
           </a>
         </nav>
