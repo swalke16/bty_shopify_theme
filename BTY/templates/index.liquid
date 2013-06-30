@@ -1,8 +1,8 @@
 <section class="home_page">
   <h1 class="message">All Gas. No Brake.</h1>
 
-  {% for product in collections.new.products limit:2 %}
-    {{ include 'product-display' }}
+  {% for product in collections.frontpage.products limit:2 %}
+    {% include 'product-display' %}
   {% endfor %}
 
   <!-- TODO: featured product -->
