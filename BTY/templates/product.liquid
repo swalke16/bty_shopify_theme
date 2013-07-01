@@ -48,3 +48,36 @@
   </div>
 
 </section>
+
+<script type="text/javascript">
+  var optionsSelectortCallback = function(variant, selector) {
+    if (variant && variant.available == true) {
+      // selected a valid variant
+      jQuery('#add-to-cart').removeClass('disabled').removeAttr('disabled'); // remove unavailable class from add-to-cart button, and re-enable button
+      jQuery('.full_view_price').html(Shopify.formatMoney(variant.price, "{{shop.money_with_currency_format}}"));  // update price field
+    } else {
+      // variant doesn't exist
+      jQuery('#add-to-cart').addClass('disabled').attr('disabled', 'disabled');      // set add-to-cart button to unavailable class and disable button
+      var message = variant ? "Sold Out" : "Unavailable";
+      jQuery('.full_view_price').text(message);
+    }
+  };
+
+  // initialize multi selector for product
+  jQuery(function() {
+    new Shopify.OptionSelectors("product-select", { product: {{ product | json }}, onVariantSelected: optionsSelectortCallback });
+
+    // select first available variant
+    {% assign found_one_in_stock = false %}
+    {% for variant in product.variants %}
+      {% if variant.available and found_one_in_stock == false %}
+        {% assign found_one_in_stock = true %}
+        {% for option in product.options %}
+        jQuery('.single-option-selector:eq({{ forloop.index0 }})').val({{ variant.options[forloop.index0] | json }}).trigger('change');
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+
+    $(".item_page select:visible").select2();
+  });
+</script>
