@@ -1,10 +1,10 @@
-<div id="page" class="row">
-  
+<section>
+
   <div class="span12">
     <h1>{{ page.title }}</h1>
     <div class="page-with-contact-form">
       {{ page.content }}
-            
+
         {% form 'contact' %}
         {% if form.posted_successfully? %}
         <div class="successForm feedback">
@@ -33,7 +33,7 @@
           <p>
             <label>Phone Number:</label><br/>
             <input type="telephone" id="contactFormTelephone" name="contact[phone]" placeholder="555-555-1234" />
-          </p> 
+          </p>
           <p>
             <label>Message:</label><br/>
             <textarea rows="15" cols="75" id="contactFormMessage" name="contact[body]" placeholder="Your Message"></textarea>
@@ -43,10 +43,10 @@
           </p>
         </div>
         {% endform %}
-      
+
     </div>
   </div>
-  
-</div>
+
+</section>
 
 
