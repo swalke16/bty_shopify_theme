@@ -41,12 +41,10 @@
 
   <!-- Begin header -->
   <div class="dropdown">
-    <!-- TODO: these come from collections... -->
     <div class="container">
-      <a>CFNA</a>
-      <a>CF2</a>
-      <a>FIT CLUB</a>
-      <a>BUCKEYE crossfit</a>
+      {% for link in linklists.affiliates.links  %}
+        <a href="{{ link.url }}" title="{{ c.title }}">{{ link.title }}</a>
+      {% endfor %}
     </div>
   </div>
 
