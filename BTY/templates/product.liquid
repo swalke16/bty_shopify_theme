@@ -1,14 +1,14 @@
 <section class="item_page">
   <div class="product full_view">
-    <img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.title | escape  }}" />
+    <img src="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ product.title | escape  }}" />
     <div class="full_view_price">{{ include 'product-price' }}</div>
   </div>
 
   {% if product.images.size > 1 %}
     <div class="thumbnails">
       {% for image in product.images %}
-        <a class="product thumbnail_view" href="{{ image | product_img_url: 'original' }}" target="_blank">
-          <img src="{{ image | product_img_url: 'large' }}" alt="{{ image.alt | escape }}" />
+        <a class="product thumbnail_view" href="{{ image | product_img_url: 'master' }}" target="_blank">
+          <img src="{{ image | product_img_url: 'master' }}" alt="{{ image.alt | escape }}" />
         </a>
       {% endfor %}
     </div>
