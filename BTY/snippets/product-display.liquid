@@ -1,7 +1,5 @@
 <a class="product {{ product.handle }}" href="{{ product.url }}">
   <img src="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ product.title | escape  }}" />
-  <!--TODO: add to cart doesn't make sense here because you need to select a size, etc.. -->
-  <div class="add_to_cart"></div>
   <div class="price">{% include 'product-price' %}</div>
   <div class="product_text">{{ product.title }}</div>
 </a>

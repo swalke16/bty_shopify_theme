@@ -2,5 +2,6 @@
   "current": "Normal",
   "presets": {
     "Normal": {
+      "customer_layout": "theme"
   }
 }

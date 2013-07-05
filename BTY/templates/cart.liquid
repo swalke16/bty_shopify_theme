@@ -35,17 +35,22 @@
           <input type="text" size="4" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" onfocus="this.select();" class="item-quantity" />
         </div>
       </div>
+      <div class="remove_item">
+        <a href="/cart/change?line={{ forloop.index }}&quantity=0">
+          <div class="remove_symbol"> + </div>
+        </a>
+      </div>
       <div class="cart_price">
         {{ item.line_price | money }}
-        <a href="/cart/change?line={{ forloop.index }}&quantity=0">Remove</a>
       </div>
     </div>
     {% endfor %}
-    <!-- TODO: style this... -->
-    <span> <strong>{{ cart.total_price | money }}</strong></span>
-    <div class="buttons clearfix">
-      <input type="submit" id="checkout" class="btn" name="checkout" value="Checkout" />
-      <input type="submit" id="update-cart" class="btn" name="update" value="Update" />
+
+    <div class="cart_footer">
+      <input type="submit" id="update-cart" class="button update_cart" name="update" value="UPDATE CART" />
+      <a class="button continue_shopping" href={{ shop.url }} title="Continue Shopping">CONTINUE SHOPPING</a>
+      <input type="submit" id="checkout" class="button checkout_button" name="checkout" value="CHECKOUT" />
+      <h2 class="checkout_total">{{ cart.total_price | money }}</h2>
     </div>
 
   </form>
