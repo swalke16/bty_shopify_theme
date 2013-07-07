@@ -43,6 +43,8 @@
 }).call(this);
 
 $(document).ready(function(){
-
+  if ($(".login_page").length > 0) {
+    $(".sign_in").click();
+  }
 });
 
